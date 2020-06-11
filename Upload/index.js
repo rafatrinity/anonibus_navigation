@@ -9,7 +9,7 @@ import {
 
 import firebase from '../config/firebase';
 
-import { WrapperView, CorrecaoView, Header, Content, Footer, Avatar } from './styles';
+import { WrapperView, CorrecaoView, Header, Content, Footer, Avatar, Logo } from './styles';
 
 
 export default function Upload() {
@@ -56,8 +56,9 @@ export default function Upload() {
   return (
     <CorrecaoView>
       <WrapperView>
+      <Logo source={require('../assets/upload.png')} resizeMode="contain" />
         <Header>
-          <Text>Sou texto Um</Text>
+        
         </Header>
         <Content>
 
@@ -68,9 +69,7 @@ export default function Upload() {
 
           <Button title="Escolher Imagem" onPress={() => { escolherImagem() }} />
         </Content>
-        <Footer>
-          <Text>Sou texto Tres</Text>
-        </Footer>
+        
       </WrapperView>
     </CorrecaoView>
   )
