@@ -8,6 +8,7 @@ border:1px solid #000;
 justify-content:center;
 align-items:center;
 flex:1;
+backgroundColor: #FFF;
 `;
 
 
@@ -39,6 +40,11 @@ export const Avatar = styled.Image`
   border:3px solid #333;
 `;
 
+export const Logo = styled.Image`
+    width: 100%;
+    height: 40%;
+    marginTop: 50px;
+`;
 
 
 
