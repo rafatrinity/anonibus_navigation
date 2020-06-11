@@ -1,32 +1,25 @@
 import React from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
-import { } from './styles';
+import { StatusBar } from 'react-native';
+
+import { Container, Logo, Button, ButtonText } from './styles';
 
 
 export default Home = ({ navigation }) => {
 
   return (
-    <View style={styles.container}>
-      <Text>HOME</Text>
-      <Button title="Detalhes Sem Parametro" onPress={() =>
-        navigation.push('HomeDetails')} />
-      <Button title="Detalhes Com Parametro" onPress={() =>
-        navigation.push('HomeDetails', { name: 'Isso é um teste' })} />
-    </View>
+    <Container>
+      <StatusBar hidden />
+        <Logo source={require('../assets/home.png')} resizeMode="contain" />
+        
+        <Button onPress={() => navigation.push('HomeDetails')}>
+          <ButtonText>Detalhes Sem Parametro</ButtonText>
+        </Button>
+        <Button onPress={() =>
+        navigation.push('HomeDetails', { name: 'Isso é um teste' })}>
+          <ButtonText>Detalhes Com Parametro</ButtonText>
+        </Button>
+    </Container>
   )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  button: {
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    marginVertical: 10,
-    borderRadius: 5
-  }
-});
 

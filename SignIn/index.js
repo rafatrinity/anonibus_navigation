@@ -1,9 +1,8 @@
 import React from "react";
-import { View, Text, TextInput, StyleSheet, Button } from "react-native";
-
+import { StatusBar } from 'react-native';
 import { AuthContext } from '../context';
 
-import { } from './styles';
+import { Container, Logo, Input, Button, ButtonText, SignUpLink, SignUpLinkText } from './styles';
 
 import firebase from 'firebase';
 
@@ -25,49 +24,28 @@ export default SignIn = ({ navigation }) => {
   }
 
   return (
-    <View style={styles.container}>
-      <View style={styles.view_fields}>
-        <TextInput
-          style={styles.input_auth}
+    <Container>
+        <StatusBar hidden />
+        <Logo source={require('../assets/background.png')} resizeMode="contain" />
+        <Input
+          placeholder="Endereço de e-mail"
           onChangeText={text => setTextEmail(text.toLowerCase())}
-          value={textEmail} />
-
-        <TextInput
-          style={styles.input_auth}
+          value={textEmail} 
+        />
+        <Input
+          placeholder="Senha"
           onChangeText={text => setTextPassword(text)}
-          value={textPassword} secureTextEntry={true} />
-      </View>
-      <Button title="Acessar" onPress={() => handleSignIn()} />
-      <Button title="Criar Conta" onPress={() => navigation.push("CreateAccount")} />
-    </View>
+          value={textPassword} secureTextEntry={true}
+          secureTextEntry={true}
+        />
+        
+        <Button onPress={() => handleSignIn()}>
+          <ButtonText>Entrar</ButtonText>
+        </Button>
+        <SignUpLink onPress={() => navigation.push("CreateAccount")}>
+          <SignUpLinkText>Criar conta</SignUpLinkText>
+        </SignUpLink>
+    </Container>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  button: {
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    marginVertical: 10,
-    borderRadius: 5
-  },
-  input_auth: {
-    borderColor: '#ccc',
-    borderWidth: 1,
-    flex: 1,
-    borderRadius: 3,
-    margin: 10,
-    marginTop: 0,
-    padding: 4
-  },
-  view_fields: {
-    flexDirection: 'column',
-    width: '100%',
-    height: 100
-  }
-});
 
