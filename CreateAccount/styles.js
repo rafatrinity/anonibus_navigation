@@ -8,6 +8,22 @@ const Container = styled.View`
     backgroundColor: #FFF;
 `;
 
+const CustonInput = styled.View`
+    paddingHorizontal: 18px;
+    paddingVertical: 0px;
+    borderRadius: 5px;
+    borderColor: #ccc;
+    borderWidth: 1px;
+    backgroundColor: #FFF;
+    alignSelf: stretch;
+    marginBottom: 15px;
+    marginHorizontal: 10px;
+    fontSize: 16px;
+    flexDirection: row;
+    alignItems: center;
+    
+`;
+
 const Logo = styled.Image`
     width: 100%;
     height: 40%;
@@ -15,16 +31,15 @@ const Logo = styled.Image`
 `;
 
 const Input = styled.TextInput`
-    paddingHorizontal: 20px;
-    paddingVertical: 15px;
+    paddingHorizontal: 0px;
+    paddingVertical: 10px;
     borderRadius: 5px;
-    borderColor: #ccc;
-    borderWidth: 1px;
     backgroundColor: #FFF;
     alignSelf: stretch;
-    marginBottom: 15px;
-    marginHorizontal: 20px;
+    marginBottom: 0px;
+    marginHorizontal: 0px;
     fontSize: 16px;
+    flex: 1;
 `;
 
 
@@ -44,6 +59,20 @@ const ButtonText = styled.Text`
   textAlign: center;
 `;
 
-  
-  export { Container, Logo, Input, Button, ButtonText };
+const SignUpLink = styled.TouchableHighlight`
+  padding: 10px;
+  marginTop: 20px;
+`;
 
+const SignUpLinkText = styled.Text`
+  color: #999;
+  fontWeight: bold;
+  fontSize: 16px;
+  textAlign: center;
+`;
+  
+const Icons = styled.TouchableOpacity`
+  flex: 1;
+  alignItems: center;
+`;
+  export { Container, Logo, Input, Button, ButtonText, SignUpLink, SignUpLinkText, CustonInput };
