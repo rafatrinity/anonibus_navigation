@@ -2,6 +2,7 @@ import React from "react";
 import { StatusBar } from 'react-native';
 
 import { AuthContext } from '../context';
+import { BarPasswordStrengthDisplay } from 'react-native-password-strength-meter';
 
 import { Container, Logo, Input, Button, ButtonText, CustonInput } from './styles';
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -58,6 +59,10 @@ export default CreateAccount = () => {
           <Icon name={PasswordVisualisation.iconName} size={28} />
       </TouchableOpacity>
       </CustonInput>
+
+      <BarPasswordStrengthDisplay
+          password={textPassword}
+        />
     
     <Button onPress={() => handleSignUp()}>
       <ButtonText>Criar Conta</ButtonText>
